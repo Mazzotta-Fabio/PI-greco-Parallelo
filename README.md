@@ -39,6 +39,7 @@ Nella tabella si riportano i tempi:
 | **16**	|9436|
 
 In allegato il grafico dello strong scaling del metodo del trapezio. Dal grafico si può notare che il tempo di esecuzione diminuisce all'aumentare del numero dei processori. Quindi il programma risulta essere più veloce quando si aumentano il numero di processori.
+
 #### Strong Scaling del metodo Montecarlo.
 I test di Strong Scaling del metodo Montecarlo sono stati effettuati fissando come quantità totale dei punti 100.000.
 Nella tabella si riportano i tempi:
@@ -53,6 +54,7 @@ Nella tabella si riportano i tempi:
 | **12**	|1857 |
 | **14**	|2167 |
 | **16**	|1615|
+
 In allegato il grafico dello strong scaling del metodo Montecarlo. Dal grafico si può notare che si ha un aumento dei tempi quando si usano 8 e 14 processori. In questo caso si ha un carico di overhead in cui la comunicazione raggiunge valori molto alti da influenzare il tempo di esecuzione.
 #### Weak scaling del metodo del trapezio
 Per effettuare i test di tipo Weak Scaling del metodo del trapezio si è deciso di fissare la quantità partizioni totale uguale a 2.500.000*p dove p è il numero di processori attivi. Di seguito la tabella con i tempi:
@@ -67,6 +69,7 @@ Per effettuare i test di tipo Weak Scaling del metodo del trapezio si è deciso 
 | 30.000.000    | 12 | 35202|
 | 35.0000.000    | 14 | 35683|
 | 40.000.000   | 16 | 34636|
+
 In allegato il grafico dello weak scaling del metodo del trapezio. Il grafico mostra che fino all'utilizzo 8 processori il tempo aumenta. Poi da quando si usano 10 processori il tempo diminuisce. Probabilmente all'aumentare dei processori fino ad 8 si ha un aumento di overhead di comunicazione tra i processori. Dai 10 processori invece si ha un calo di overhead e si mantiene mediamente lo stesso intervallo di tempo.
 
 #### Weak Scaling del metodo Montecarlo
@@ -82,6 +85,7 @@ Per effettuare i test di tipo Weak Scaling del metodo Montecarlo si è deciso di
 | 300.000   | 12 | 2554|
 | 350.000    | 14 | 2645|
 | 400.000  | 16 | 2492|
+
 In allegato il grafico della weak scaling del metodo montecarlo. Osservando il grafico notiamo che anche fino all'utilizzo 8 processori il tempo aumenta. Poi da quando si usano 10 processori il tempo diminuisce. Probabilmente all'aumentare dei processori fino ad 8 si ha un aumento di overhead di comunicazione tra i vari processori. Da 10 processori  a salire, invece, si ha un calo di overhead.
 
 ### Fattori di scalabilità
