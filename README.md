@@ -22,20 +22,23 @@ Nella funzione vi sono due cicli for. Entrambi inseriscono in un array il punto 
 Poi viene chiamata due volte la funzione **MPI_Scatter**, dove la prima volta si assegna ad ogni processo il punto iniziale in cui calcolare l'area della partizione, la seconda volta si assegna ad ogni processo il punto finale in cui calcolare l'area dell'ultima partizione e si usano i rispettivi array calcolati prima. Poi abbiamo che ogni processo, usando i punti di inizio e di fine di calcolo delle partizioni, calcola le aree delle partizioni ricevute chiamando la funzione **regolaTrapezio**. Infine si fa la somma totale di tutte le aree delle partizioni calcolate dai vari processi attraverso la funzione **MPI_Reduce**. Il processo Master calcola l'area totale, che corrisponde all' approssimazione del pigreco, e libera la memoria allocata.
 ## Benchmark
 Sono stati effettuati una serie di test utilizzando delle istanze di tipo **m4.large** (2 core) di Amazon Web Services con **StarCluster-Ubuntu_12.04-x86_64-hvm** - ami-52a0c53b. In entrambi i metodi il tempo di esecuzione è stato considerato il momento successivo alla divisione dei  vari dati da parte del processo Master. I tempi sono misurati in secondi ed è stata utilizzata la funzione `MPI_Wtime()` per prendere i tempi. Durante la scrittura del readme i tempi vengono riportati in microsecondi.
+
 #### Strong Scaling del metodo del Trapezio.
 I test di Strong Scaling del metodo del trapezio sono stati effettuati fissando come quantità totale delle partizioni 10.000.000.
 Nella tabella si riportano i tempi:
-| N°Processore|  Tempo in microsecondi |
+
+| N°Processore|  Tempo in microsecondi|
 | ------------------- | :---------------: |
-| **2**	|67167 |
-| **4**	|34747 |
-| **6**	|23643 |
-| **8**	|20254 |
-| **10**	|16103|
-| **12**	|12817 |
-| **14**	|11503|
-| **16**	|9436|
- In allegato il grafico dello strong scaling del metodo del trapezio. Dal grafico si può notare che il tempo di esecuzione diminuisce all'aumentare del numero dei processori. Quindi il programma risulta essere più veloce quando si aumentano il numero di processori.
+| **2**	|2089 |
+| **4**	|1934|
+| **6**	|1623 |
+| **8**	|4212|
+| **10**	|2894 |
+| **12**	|1857 |
+| **14**	|2167 |
+| **16**	|1615|
+
+In allegato il grafico dello strong scaling del metodo del trapezio. Dal grafico si può notare che il tempo di esecuzione diminuisce all'aumentare del numero dei processori. Quindi il programma risulta essere più veloce quando si aumentano il numero di processori.
 #### Strong Scaling del metodo Montecarlo.
 I test di Strong Scaling del metodo Montecarlo sono stati effettuati fissando come quantità totale dei punti 100.000.
 Nella tabella si riportano i tempi:
