@@ -29,14 +29,14 @@ Nella tabella si riportano i tempi:
 
 | N°Processore|  Tempo in microsecondi|
 | ------------------- | :---------------: |
-| **2**	|2089 |
-| **4**	|1934|
-| **6**	|1623 |
-| **8**	|4212|
-| **10**	|2894 |
-| **12**	|1857 |
-| **14**	|2167 |
-| **16**	|1615|
+| **2**	|67167 |
+| **4**	|34747 |
+| **6**	|23643 |
+| **8**	|20254 |
+| **10**	|16103|
+| **12**	|12817 |
+| **14**	|11503|
+| **16**	|9436|
 
 In allegato il grafico dello strong scaling del metodo del trapezio. Dal grafico si può notare che il tempo di esecuzione diminuisce all'aumentare del numero dei processori. Quindi il programma risulta essere più veloce quando si aumentano il numero di processori.
 #### Strong Scaling del metodo Montecarlo.
