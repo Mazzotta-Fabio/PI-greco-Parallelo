@@ -39,13 +39,13 @@ int main(int argc, char* argv[]){
 		riempiArray(arrayValoriInizio,arrayValoriFine,p,n);
 	}
 
-	MPI_Barrier(MPI_COMM_WORLD);
-	t1=MPI_Wtime();
-
 	/*inviamo la quantità parziale di partizione ad ogni processo in modo collettivo*/
 	MPI_Scatter(arrayValoriInizio,1,MPI_INT,&inizio,1,MPI_INT,0,MPI_COMM_WORLD);
 	MPI_Scatter(arrayValoriFine,1,MPI_INT,&fine,1,MPI_INT,0,MPI_COMM_WORLD);
 	
+	//prendiamo i tempi
+	MPI_Barrier(MPI_COMM_WORLD);
+	t1=MPI_Wtime();
 
 	//calcoliamo l'area parziale delle partizioni ricevute
 	parSum=regolaTrapezio(inizio,fine);
