@@ -35,12 +35,12 @@ int main(int argc, char* argv[]){
 		riempiArray(arrayValori,p,puntiTotQuad);
 	}
 
-	MPI_Barrier(MPI_COMM_WORLD);
-	t1=MPI_Wtime();
-
 	/*inviamo la quantità dei punti ad ogni processo in maniera collettiva*/
 	MPI_Scatter(arrayValori,1,MPI_INT,&recvBuf,1,MPI_INT,0,MPI_COMM_WORLD);
 	
+	//prendiamo i tempi
+	MPI_Barrier(MPI_COMM_WORLD);
+	t1=MPI_Wtime();
 
 	//calcoliamo i punti parziali della circonferenza ricevuti
 	puntiCircPar=regolaMontecarlo(recvBuf);
